@@ -15,7 +15,9 @@ datasette install datasette-hmf2-vis
 ```
 ## Usage
 
-Usage instructions go here.
+To start datasette for the largish db use:
+
+```python3 -m datasette glotec.db --plugins-dir=plugins --template-dir plugins/templates --root --static assets:static-files/ --setting sql_time_limit_ms 17000 --setting max_returned_rows 100000```
 
 ## Development
 
