@@ -1,8 +1,34 @@
-# To get the tests to pass when the repo is first copied
-
 [project]
-name = "datasette-plugin-template-repository"
+name = "datasette-hmf2-vis"
 version = "0.1"
+description = "Visualizes hmF2 data from various instruments using czml loaded Cesium maps"
+readme = "README.md"
+authors = [{name = "antigravkids"}]
+license = {text = "Apache-2.0"}
+classifiers=[
+    "Framework :: Datasette",
+    "License :: OSI Approved :: Apache Software License"
+]
+requires-python = ">=3.9"
+dependencies = [
+    "datasette"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/hcarter333/datasette-hmf2-vis"
+Changelog = "https://github.com/hcarter333/datasette-hmf2-vis/releases"
+Issues = "https://github.com/hcarter333/datasette-hmf2-vis/issues"
+CI = "https://github.com/hcarter333/datasette-hmf2-vis/actions"
+
+[project.entry-points.datasette]
+hmf2_vis = "datasette_hmf2_vis"
 
 [project.optional-dependencies]
-test = ["pytest"]
+test = ["pytest", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
